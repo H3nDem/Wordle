@@ -13,7 +13,7 @@ Website of the New York Times Wordle original game: https://www.nytimes.com/game
 
 
 ## Author
-Realized by Henrique D.
+Realized by Henrique D.M.M
 
 
 ## Demo images
