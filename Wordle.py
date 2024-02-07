@@ -61,7 +61,7 @@ class Wordle():
         self.Grid = Canvas(self.init_game_frame, bg="white", height=GRID_HEIGHT, width=GRID_WIDTH)
         for i in range(TILES):
             for j in range(LINES):
-                self.Grid.create_rectangle(i*TILE_SIZE, j*TILE_SIZE, (i+1)*TILE_SIZE, (j+1)*TILE_SIZE, fill='blue')
+                self.Grid.create_rectangle(i*TILE_SIZE, j*TILE_SIZE, (i+1)*TILE_SIZE, (j+1)*TILE_SIZE, fill='gray')
         self.Grid.pack(side=TOP)
      
     # Initialize the entry to realise the guess    
@@ -77,8 +77,6 @@ class Wordle():
         for line in f:
             if (i == b):
                 self.Word = line[0:len(line)-1]
-                print(self.Word)
-                # print(self.Word)
                 return
             i += 1    
         print("Error occured while reading the dictionnary")
@@ -118,7 +116,7 @@ class Wordle():
                 if (self.is_letter_right_pos(letter,tile-1)):
                     self.Grid.create_rectangle(x1,y1,x2,y2, fill='green')
             else:
-                self.Grid.create_rectangle(x1,y1,x2,y2, fill='blue')
+                self.Grid.create_rectangle(x1,y1,x2,y2, fill='gray')
             self.Grid.create_text(TILE_CENTER*(tile-0.5)*2, (TRIES+0.5)*TILE_CENTER*2, text=letter, fill="white", font=('MS Gothic', int(TILE_SIZE/3)))
             tile += 1
         self.Grid.update()
@@ -151,4 +149,5 @@ class Wordle():
         
 
 w = Wordle()
+root.title("Wordle")
 root.mainloop()
